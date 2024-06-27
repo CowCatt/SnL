@@ -1,14 +1,15 @@
 import java.util.ArrayList;
-import javax.swing.*;
+import javax.swing.JOptionPane;
 import java.util.HashSet;
 public class SnakeAndLadder {
     //states
     private ArrayList<Player> players;
     private ArrayList<Snake> snakes;
     private ArrayList<Ladder> ladders;
-    //0 = the game isnt started yet
-    //1 = the game is started    //2 = the game is over
     private int status;
+    /*0 = the game hasnt started yet
+    1 = the game has started
+    2 = the game is over */
     private int playerInTurn;
     private HashSet<Integer> num = new HashSet<>();
     private int snakeAmount = (int) (Math.random()*5+4);
@@ -19,7 +20,6 @@ public class SnakeAndLadder {
         this.snakes = new ArrayList<Snake>();
         this.ladders = new ArrayList<Ladder>();
         this.status = 0;
-
     }
     public void initiateGame(){
         //set the ladders

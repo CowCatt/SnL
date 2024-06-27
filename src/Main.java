@@ -42,9 +42,9 @@ public class Main extends JFrame {
         image = new ImageIcon(getClass().getResource("ularTangga.jpeg")); //add image file
         displayField = new JLabel(image);
         frame.add(displayField);
-        frame.setSize(150, 150); // Resize the image to 300x300
+        frame.setSize(150, 150); // Set image size
         JLabel imageLabel = new JLabel(image); // Create a JLabel for the image
-        imageLabel.setHorizontalAlignment(JLabel.CENTER); // Center the image horizontally
+        imageLabel.setHorizontalAlignment(JLabel.CENTER); // Set image to the center of the window horizontally
 
         JLabel textLabel = new JLabel("Selamat datang di permainan ular tangga!"); // Create a JLabel for the text
         textLabel.setHorizontalAlignment(JLabel.CENTER); // Center the text horizontally
@@ -64,9 +64,8 @@ public class Main extends JFrame {
         boardLabels = new JLabel[10][10];
 
 
-        // Create a font with the desired size
-        Font font = new Font("JetBrains Mono", Font.PLAIN, 20);
-
+        // Create font for board
+        Font font = new Font("JetBrains Mono", Font.BOLD, 20);
 
         for (int i = 0; i < 10; i++) {
             for (int j = 0; j < 10; j++) {
@@ -145,7 +144,7 @@ public class Main extends JFrame {
         JFrame frame = new JFrame("Ladders and Snakes");
         frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         frame.add(scrollPane);
-        frame.setSize(300, 400);
+        frame.setSize(200, 400);
 
         // Get screen dimensions
         Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
