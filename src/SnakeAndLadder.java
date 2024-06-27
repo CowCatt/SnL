@@ -1,9 +1,6 @@
-import java.awt.*;
 import java.util.ArrayList;
 import javax.swing.*;
 import java.util.HashSet;
-import java.awt.Graphics;
-import java.awt.Graphics2D;
 public class SnakeAndLadder {
     //states
     private ArrayList<Player> players;
@@ -11,8 +8,7 @@ public class SnakeAndLadder {
     private ArrayList<Ladder> ladders;
     private int boardSize;
     //0 = the game isnt started yet
-    //1 = the game is started
-    //2 = the game is over
+    //1 = the game is started    //2 = the game is over
     private int status;
     private int playerInTurn;
     private HashSet<Integer> num = new HashSet<>();
@@ -66,59 +62,24 @@ public class SnakeAndLadder {
         addSnakes(snakes);
     }
 
-    public void drawLadders(Graphics g, int[][] ladders) {
-        Graphics2D g2 = (Graphics2D) g;
-        g2.setColor(Color.RED);
-
-        // Define the size of each cell
-        int cellSize = 100;
-
-        for (int[] ladder : ladders) {
-            int start = ladder[0];
-            int end = ladder[1];
-
-            // Calculate start coordinates
-            int startRow = (start - 1) / 10;
-            int startCol = (start - 1) % 10;
-            int startX = startCol * cellSize + cellSize / 2;
-            int startY = (100 - startRow - 1) * cellSize + cellSize / 2;
-
-            // Calculate end coordinates
-            int endRow = (end - 1) / 10;
-            int endCol = (end - 1) % 10;
-            int endX = endCol * cellSize + cellSize / 2;
-            int endY = (10 - endRow - 1) * cellSize + cellSize / 2;
-
-            // Draw the line
-            g2.drawLine(startX, startY, endX, endY);
-        }
-    }
 
     //setter
-    public void setBoardSize(int boardSize){
-        this.boardSize = boardSize;
-    }
+
     public void setStatus(int status){
         this.status = status;
     }
-    public void setPlayerInTurn(int p){
-        this.playerInTurn = p;
-    }
+
     public void addPlayer(Player p){
         this.players.add(p);
     }
-    public void addSnake(Snake s){
-        this.snakes.add(s);
-    }
+
     public void addSnakes(int [][] s) {
         for (int i=0;i<s.length;i++){
             Snake snake = new Snake(s[i][0], s[i][1]);
             this.snakes.add(snake);
         }
     }
-    public void addLadder(Ladder l){
-        this.ladders.add(l);
-    }
+
     public void addLadders(int [][] l){
         for (int i=0;i<l.length;i++){
             Ladder ladder = new Ladder(l[i][0], l[i][1]);
@@ -126,23 +87,9 @@ public class SnakeAndLadder {
         }
     }
     //getter
-    public int getBoardSize(){
-        return boardSize;
-    }
+
     public int getStatus(){
         return status;
-    }
-    public int getPlayerInTurn(){
-        return playerInTurn;
-    }
-    public ArrayList<Player> getPlayers(){
-        return players;
-    }
-    public ArrayList<Snake> getSnakes(){
-        return snakes;
-    }
-    public ArrayList<Ladder> getLadders(){
-        return ladders;
     }
 
     public int getTurn(){
@@ -183,5 +130,11 @@ public class SnakeAndLadder {
             this.status = 2;
             System.out.println("The winner is: " + p.getUserName());
         }
+    }
+    public ArrayList<Ladder> getLadders() {
+        return ladders;
+    }
+    public ArrayList<Snake> getSnakes() {
+        return snakes;
     }
 }
