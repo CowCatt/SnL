@@ -101,12 +101,11 @@ public class Main extends JFrame {
         showLaddersAndSnakes(game.getLadders(), game.getSnakes());
 
         // Ask for the number of players
-        String numPlayersStr = JOptionPane.showInputDialog("Enter the number of players (2-4):");
-        numPlayers = Integer.parseInt(numPlayersStr);
-        if (numPlayers < 2 || numPlayers > 4) {
+        do{ String numPlayersStr = JOptionPane.showInputDialog("Enter the number of players (2-4):");
+            numPlayers = Integer.parseInt(numPlayersStr);
+            if (numPlayers < 2 || numPlayers > 4)
             JOptionPane.showMessageDialog(this, "Invalid number of players. Please enter 2-4.");
-            System.exit(0);
-        }
+        }while (numPlayers < 2 || numPlayers > 4);
 
         // Ask for the player names
         for (int i = 0; i < numPlayers; i++) {
