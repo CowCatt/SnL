@@ -6,7 +6,6 @@ public class SnakeAndLadder {
     private ArrayList<Player> players;
     private ArrayList<Snake> snakes;
     private ArrayList<Ladder> ladders;
-    private int boardSize;
     //0 = the game isnt started yet
     //1 = the game is started    //2 = the game is over
     private int status;
@@ -16,7 +15,6 @@ public class SnakeAndLadder {
     private int ladderAmount = (int) (Math.random()*5+4);
 
     public SnakeAndLadder(int boardSize){
-        this.boardSize = boardSize;
         this.players = new ArrayList<Player>();
         this.snakes = new ArrayList<Snake>();
         this.ladders = new ArrayList<Ladder>();

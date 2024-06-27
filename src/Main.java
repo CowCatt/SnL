@@ -1,3 +1,18 @@
+/**
+ * -----------------------------------------------------
+ * ES234211 - Programming Fundamental
+ * Genap - 2023/2024
+ * Group Capstone Project: Snake and Ladder Game
+ * -----------------------------------------------------
+ * Class    : C
+ * Group    : 02
+ * Members  :
+ * 1. 5026231030 - Jonathan Abimanyu Trisno
+ * 2. 5026231102 - Ahmed Miftah Ghiffari
+ * 3. 5026231141 - Auliya Malika Idi
+ * ------------------------------------------------------
+ */
+
 import javax.swing.*;
 import java.awt.*;
 import java.util.ArrayList;
@@ -145,18 +160,13 @@ public class Main extends JFrame {
     }
 
     private Color getPlayerColor(int playerIndex) {
-        switch (playerIndex) {
-            case 0:
-                return Color.BLUE;
-            case 1:
-                return Color.RED;
-            case 2:
-                return Color.GREEN;
-            case 3:
-                return Color.orange;
-            default:
-                return Color.BLACK;
-        }
+        return switch (playerIndex) {
+            case 0 -> Color.BLUE;
+            case 1 -> Color.RED;
+            case 2 -> Color.GREEN;
+            case 3 -> Color.orange;
+            default -> Color.BLACK;
+        };
     }
 
     private void updatePlayerLabels() {

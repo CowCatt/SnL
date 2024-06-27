@@ -10,11 +10,6 @@ public class Player{
     }
 
     //setter
-    public void setName(String userName){
-        this.userName = userName;
-
-    }
-
     public void setPosition(int pos){
         this.position = position;
     }
